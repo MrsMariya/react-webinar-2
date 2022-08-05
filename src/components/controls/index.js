@@ -1,11 +1,15 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import './style.css';
+import {cn as bem} from "@bem-react/classname";
 
-function Controls({onAdd}){
+function Controls({onOpenModal}){
+  const cn = bem('Controls')
   return (
-    <div className='Controls'>
-      <button onClick={onAdd}>Добавить</button>
+    <div className={cn()}>
+      <p>В корзине:</p>
+      <p className={cn('price')}>2 товара / 23 ₽</p>
+      <button onClick={onOpenModal}>Перейти</button>
     </div>
   )
 }
